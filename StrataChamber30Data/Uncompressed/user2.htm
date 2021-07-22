@@ -1,0 +1,60 @@
+<body>
+<center>
+<div class="box1">
+
+<p>Gasses</p><br>
+CO2 0-5%<div id="d2" class="data" style="background-color:#ADFF2F;"></div>
+O2 0-25%<div id="d1" class="data" style="background-color:#ADFF2F;"></div>
+CO 0-500ppm<div id="d3" class="data"style="background-color:#ADFF2F;"></div>
+</div>
+
+<div class="box1">
+<p>Flow Meter</p><br>
+Flow SCFM<div id="d9" class="data" style="background-color:#ADFF2F;"></div>
+Pressure PSI<div id="d11" class="data"style="background-color:#ADFF2F;"></div>
+Outside Temp F<div id="d13" class="data"style="background-color:#ADFF2F;"></div>
+</div>
+
+<div class="box1">
+<p>Airlock</p>
+Open?<div id="d31" class="data" style="background-color:#ADFF2F;"></div>
+</div>
+
+</center>
+<iframe src="user3.htm" style="display:none;"></iframe>
+</body>
+
+<script>setInterval(function () { l(gd, "d1", "d2", "d3", "d9", "d11", "d13", "d31"); }, 2000); setInterval(function () { interval(); }, 2000); function interval() { v("d2", 21.5, 19.5); v("d1", 1, 0); v("d3", 100, 0); v("d9", 4000, 2500); v("d11", 4000, 2500); v("d13", 28, 23); v("d31", 240, 200); } function l(tol, f0, f1, f2, f3, f4, f5, f6) { tol(f0); tol(f1); tol(f2); tol(f3); tol(f4); tol(f5); tol(f6); } function v(id, max, min) { var x = document.getElementById(id).innerHTML; if (x > max || x < min) { document.getElementById(id).style.backgroundColor = "red"; } else { document.getElementById(id).style.backgroundColor = "#ADFF2F"; } } function gd(id) { document.getElementById(id).innerHTML = ((Math.round(sessionStorage.getItem(id) * 100) * 0.01).toFixed(1)); }</script>
+<style>
+body {
+font-family: 'Trebuchet MS';
+}
+p {
+font-size: 22px;
+font-weight: bold;
+border-top: solid;
+border-bottom: solid;
+}
+
+.box1 {
+background-color: #2D5673;
+border: 1px solid black;
+color: white;
+padding: 5px;
+margin: 5px;
+float: left;
+width: 150px;
+}
+
+.data{
+width:75px;
+height:30px;
+line-height: 30px;
+font-size:25;
+border:2px solid black;
+padding:15px;
+border-radius:5px;
+margin-bottom:12px;
+color:black;
+}
+</style>

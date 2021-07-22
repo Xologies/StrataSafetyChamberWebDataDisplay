@@ -1,0 +1,59 @@
+<body><span id="heading"class="heading">Safety Chamber</span>
+<center>
+<div id="webDisplay">
+<iframe class="dataDisplay"src="user2.htm"scrolling="no"width="19%"style="border:0px"></iframe>
+<iframe class="dataDisplay"src="user7.htm"scrolling="no"width="10%"style="border:0px"></iframe>
+<iframe class="dataDisplay"src="user8.htm"scrolling="no"width="20%"style="border:0px"></iframe>
+<iframe class="cam"src="http://192.168.1.92"height="600px"width="800px"scrolling="no"style="border:5px,solid,black"></iframe>
+</div>
+</center>
+<span id="heading"class="bottom"></span>
+</body>
+<script>var oc;var er;var occ=document.getElementById("occ");var heading=document.getElementById("heading");setInterval(function(){ud();},2000);function ud(){oc=sessionStorage.getItem("d8");er=sessionStorage.getItem("d9");if(oc==0){occ.innerHTML="";}else if(oc==1){occ.innerHTML="Occupied";}if(er==0){bg(occ,"rgb(45,86,115)");bg(heading,"rgb(45,86,115)");}else if(er==1){bg(occ,"green");bg(heading,"green");}else if(er==2){bg(occ,"goldenrod");bg(heading,"goldenrod");}else if(er==3){bg(occ,"red");bg(heading,"red");}}function bg(m,c){m.style.backgroundColor=c;}</script>
+<style>
+
+body{
+overflow:hidden;
+margin:0px;
+background-image:linear-gradient(45deg,#dbdbdb 8%,#ffffff 8%,#ffffff 50%,#dbdbdb 50%,#dbdbdb 58%,#ffffff 58%,#ffffff 100%);
+background-size:8.5px 8.5px;
+font-family:'Trebuchet MS';
+}
+
+.webDisplay{
+position:relative;
+}
+
+.dataDisplay{
+height: 80%;
+padding-top:100px;
+padding-right:0px;
+margin-right:0px;
+float:left;
+}
+
+.cam{
+float:left;
+position:relative;
+top:115px;
+left:5%;
+}
+
+span{
+background-color:rgb(45,86,115);
+color:#ffffff;
+display:inline-block;
+font-size:28px;
+height:30px;
+margin:0px;
+}
+
+.heading{
+width:100%;
+text-align:center;
+}
+
+.bottom{
+    width:100%;
+    height:85px;
+}
